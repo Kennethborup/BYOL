@@ -29,7 +29,7 @@ torch.cuda.manual_seed(seed)
 torch.backends.cudnn.deterministic = True
 
 # Initialize backbone, BYOL and optimizer
-resnet = models.resnet18(pretrained=True)
+resnet = models.resnet50(pretrained=True)
 byol = BYOL(resnet, imageSize=imgSize, embeddingLayer='avgpool')
 optimizer = torch.optim.Adam(byol.parameters(), lr=3e-4)
 
