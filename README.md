@@ -6,14 +6,14 @@ BYOL is a self-supervised method, highly similar to current contrastive learning
 
 Essentially, BYOL projects an embedding of two independent views of a single image to some low-dimensional space using an online model, and a target model (EMA of online model). Afterwards, a predictor (MLP) predicts the target projection from the online projection, and the loss is backpropagated only through the online model parameters. Intuitively; if the two embeddings are good (close to each other), it should be easy to predict one from the other.
 
-# Install requirements
-To install the needed requirements in a new conda environment use
+## Install requirements
+To install the needed requirements in a new conda environment (BYOL) use
 
 ```bash
-conda create --name <env> --file requirements.txt
+conda create --name BYOL --file requirements.txt
 ```
 
-# Example usage
+## Example usage
 Apply the BYOL class by specifying (1) the neural network used as backbone, (2) image dimensions for randomized cropping (must match input dimension of the backbone), and (3) the position or name of the layer in the backbone which should be used as the embedding.
 
 One can freely specify all the parameters of the BYOL instance, but they are currently alligned with the original paper.
@@ -54,7 +54,7 @@ images = torch.randn(10, 3, imgSize, imgSize).to(device)
 embeddings = byol(images)
 ```
 
-# Citation
+## Citation
 Remember to cite the paper.
 ```bibtex
 @misc{grill2020bootstrap,
