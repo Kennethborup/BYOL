@@ -10,7 +10,7 @@ Essentially, BYOL projects an embedding of two independent views of a single ima
 To install the needed requirements in a new conda environment (BYOL) use
 
 ```bash
-conda create --name BYOL --file requirements.txt
+conda env create -f environment.yml
 ```
 
 ## Example usage
@@ -19,6 +19,10 @@ Apply the BYOL class by specifying (1) the neural network used as backbone, (2) 
 One can freely specify all the parameters of the BYOL instance, but they are currently alligned with the original paper.
 
 ```python
+import torch
+from BYOL.byol import BYOL
+from torchvision import models
+
 # Initialize seed and hyperparameters
 seed = 0
 imgSize = 256

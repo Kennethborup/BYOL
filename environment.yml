@@ -1,0 +1,11 @@
+name: BYOL
+channels:
+  - anaconda
+  - conda-forge
+dependencies:
+  - torchvision=0.4.2
+  - python=3.7.8
+  - pip=20.2
+  - pip:
+    - kornia==0.3.0
+    - torch==1.5.0

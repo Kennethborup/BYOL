@@ -1,7 +1,0 @@
-# This file may be used to create an environment using:
-# $ conda create --name <env> --file <this file>
-# platform: linux-64
-kornia=0.3.0=pyh9f0ad1d_0
-python=3.7.8=h6f2ec95_0_cpython
-torch=1.5.0=cpu_py37hd91cbb3_0
-torchvision=0.4.2=cuda100py37hecfc37a_0

@@ -3,7 +3,7 @@ import torch.nn as nn
 from kornia import augmentation, filters, color
 import copy
 
-from utils import EMA, RandomApply, Hook
+from BYOL.utils import EMA, RandomApply, Hook
 
     
 def partLoss(x, y):
@@ -145,7 +145,6 @@ class BYOL(nn.Module):
         """
         for onlineParams, targetParams in zip(self.onlineEncoder.parameters(), self.targetEncoder.parameters()):
                 targetParams.data = self.targetEMA(MA=targetParams.data, value=onlineParams.data)
-        return self.targetEncoder
     
     def contrast(self, x):
         """
